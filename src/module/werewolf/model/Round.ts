@@ -17,8 +17,9 @@ class Round {
   // 毒杀
   poisoned?: Member
 
-  constructor() {
-    this.id = Math.random()
+  constructor(partial: Partial<Round>) {
+    // this.id = Math.random()
+    Object.assign(this, partial)
   }
 }
 
