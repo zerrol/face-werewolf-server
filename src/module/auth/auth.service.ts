@@ -14,6 +14,10 @@ export class AuthService {
     return await this.usersRepository.find();
   }
 
+  async createUser(user: User) {
+    await this.usersRepository.save(user)
+  }
+
   getAuth() {
     return 'hello auth'
   }

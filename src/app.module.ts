@@ -6,7 +6,6 @@ import { AppService } from './app.service';
 
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { databaseConfig } from './config/database';
 import { AuthModule } from './module/auth/auth.module';
 import { WerewolfModule } from './module/werewolf/werewolf.module';
 import { Connection } from 'typeorm';
