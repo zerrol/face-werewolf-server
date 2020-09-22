@@ -14,7 +14,11 @@ export class AuthService {
     return await this.usersRepository.find();
   }
 
-  async createUser(user: User) {
+  async findUserByOpenId(openId: string) {
+    return await this.usersRepository.findOne({ openId })
+  }
+
+  async saveUser(user: User) {
     await this.usersRepository.save(user)
   }
 

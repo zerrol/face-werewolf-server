@@ -14,7 +14,7 @@ class Room {
   members?: Member[]
 
   // 房主
-  owner?: Owner
+  ownerUserId?: string
 
   // 调度器，负责调度游戏进行
   // 开始新的游戏，则创建新的scheduler即可

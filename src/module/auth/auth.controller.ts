@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from "@nestjs/common";
+import { Controller, Get, Post, Body, Param } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { User } from "./entity/user.entity";
 import { ApiTags } from "@nestjs/swagger";
@@ -11,14 +11,15 @@ export class AuthController{
     private readonly authService: AuthService
   ){}
 
-  @Get('users')
-  async getAllUser() {
-    return await this.authService.findAll()
+  @Get('users/:openId')
+  async getUser(@Param('openId') openId: string) {
+    return await this.authService.findUserByOpenId(openId)
   }
 
   @Post('users')
   async createUser(@Body() user: User) {
     console.log("get user", user, user instanceof User)
-    await this.authService.createUser(user)
+    await this.authService.saveUser(user)
   }
+
 }

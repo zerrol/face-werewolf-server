@@ -17,7 +17,7 @@ import { Connection } from 'typeorm';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: '172.16.59.109',
       port: 3306,
       username: 'root',
       password: 'adminadmin',
