@@ -1,21 +1,26 @@
-import Vote from './Vote'
-import Member from './Member'
+import Vote from '../model/Vote'
+import Member from '../model/Member'
 
 // 回合
 class Round {
   id: number
 
+  scheduleId: number
+
   // 投票
-  vote?: Vote
+  votes?: Vote[]
   
   // 狼杀
   wolfKill?: Member
 
   // 救人
-  rescued?: Member
+  isRescued?: boolean
 
   // 毒杀
-  poisoned?: Member
+  poisoned?: Member  
+
+  // 警长
+  captain?: Member
 
   constructor(partial: Partial<Round>) {
     // this.id = Math.random()

@@ -8,23 +8,11 @@ export class Room {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column()
-  sits: number
-
   // 游戏角色：平民、狼人、女巫等  
   @ApiProperty()
-  @Column()
   roles: Symbol[]
 
-  // members?: Member[]
-
-  // 房主
-  @ApiPropertyOptional()
+  @ApiProperty()
   @Column()
-  ownerUserId?: string
-
-  // 调度器，负责调度游戏进行
-  // 开始新的游戏，则创建新的scheduler即可
-  // scheduler: Scheduler
-
+  ownerUserId: number
 }
